@@ -19,4 +19,14 @@ function computerPlay() {
     return play;
 }
 
-console.log(computerPlay());
+/**
+ * Receives the play from the user,
+ * converts it into Lower Case and
+ * returns the play.
+ * @returns 
+ */
+function playerPlay() {
+    let play = prompt("Select either Rock, Paper or Scissors: ");
+    play = play.toLowerCase();
+    return play;
+}
