@@ -34,12 +34,10 @@ function playerPlay() {
 /**
  * Receives the plays from the player and the computer.
  * Plays the round of Rock, Paper, Scissors.
- * @param {string} playerPlay - The player's play.
- * @param {string} computerPlay - The computer's play.
  */
-function playRound(playerPlay, computerPlay) {
-    let player = playerPlay;
-    let computer = computerPlay;
+function playRound() {
+    let player = playerPlay();
+    let computer = computerPlay();
     let result;
 
     if (player === "rock") {
