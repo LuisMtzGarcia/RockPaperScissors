@@ -48,31 +48,47 @@ function playRound() {
         return playRound();
     }
 
+    return checkResult(player, computer);
+}
+
+/**
+ * Receives the player's and computer's plays and checks the result.
+ * Gives a numerical value to the play, that is received in a string.
+ * If the play is 3(rock) against 1(paper), a 3 is added to the 1(paper)
+ * so that paper beats rock.
+ * @param {string} player 
+ * @param {string} computer 
+ * @returns 
+ */
+function checkResult(player, computer) {
     if (player === "rock") {
-        if (computer === "paper") {
-            result = "loss";
-            return result;
-        }
-        else if (computer === "scissors") {
-            result = "win";
-            return result;
-        }
-    } else if (player === "paper") {
-        if (computer === "rock") {
-            result = "win";
-            return result;
-        } else if (computer === "scissors") {
-            result = "loss";
-            return result;
-        } 
+        player = 3;
     } else if (player === "scissors") {
-        if (computer === "rock") {
-            result = "loss";
-            return result;
-        } else if (computer === "paper") {
-            result = "win";
-            return result;
+        player = 2;
+    } else {
+        player = 1;
+    }
+
+    if (computer === "rock") {
+        computer = 3;
+    } else if (computer === "scissors") {
+        computer = 2;
+    } else {
+        computer = 1;
+    }
+
+    if ((player === 3 && computer === 1) || (player === 1 && computer === 3)) {
+        if (computer === 1) {
+            computer += 3;
+        } else if (player === 1) {
+            player += 3;
         }
+    }
+
+    if (player > computer) {
+        return "win";
+    } else {
+        return "loss";
     }
 }
 
