@@ -34,6 +34,9 @@ function playerPlay() {
 /**
  * Receives the plays from the player and the computer.
  * Plays the round of Rock, Paper, Scissors.
+ * If the round results in a tie, displays the result and
+ * calls itself until either a Win or a Loss is obtained.
+ * @returns
  */
 function playRound() {
     let player = playerPlay();
@@ -77,6 +80,12 @@ function playRound() {
     }
 }
 
+/**
+ * Plays 5 rounds of Rock, Paper, Scissors.
+ * A round is defined as the player obtaining either a Win or a Loss.
+ * If the result is a tie, the round is played again without being 
+ * counted in the 5 rounds counter.
+ */
 function playGame() {
     let playerWins =  0;
     let computerWins = 0;
