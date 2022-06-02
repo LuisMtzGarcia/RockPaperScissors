@@ -28,6 +28,12 @@ function computerPlay() {
 function playerPlay() {
     let play = prompt("Select either Rock, Paper or Scissors: ");
     play = play.toLowerCase();
+
+    if ((play !== "rock") && (play !== "paper") && (play !== "scissors")) {
+        alert("Invalid input! Input either Rock, Paper or Scissors.")
+        play = playerPlay();
+    }
+
     return play;
 }
 
