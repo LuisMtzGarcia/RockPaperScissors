@@ -43,6 +43,11 @@ function playRound() {
     let computer = computerPlay();
     let result;
 
+    if (player === computer) {
+        console.log("It's a tie!");
+        return playRound();
+    }
+
     if (player === "rock") {
         if (computer === "paper") {
             result = "loss";
@@ -51,9 +56,6 @@ function playRound() {
         else if (computer === "scissors") {
             result = "win";
             return result;
-        } else {
-            console.log("It's a tie!");
-            return playRound();
         }
     } else if (player === "paper") {
         if (computer === "rock") {
@@ -62,10 +64,7 @@ function playRound() {
         } else if (computer === "scissors") {
             result = "loss";
             return result;
-        } else {
-            console.log("It's a tie!");
-            return playRound();
-        }
+        } 
     } else if (player === "scissors") {
         if (computer === "rock") {
             result = "loss";
@@ -73,9 +72,6 @@ function playRound() {
         } else if (computer === "paper") {
             result = "win";
             return result;
-        } else {
-            console.log("It's a tie!");
-            return playRound();
         }
     }
 }
