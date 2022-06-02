@@ -80,24 +80,30 @@ function playRound(playerPlay, computerPlay) {
 }
 
 function playGame() {
-    let result =  0;
+    let playerWins =  0;
+    let computerWins = 0;
 
     for (let i = 0; i < 5; i++) {
         let playerSelection = playerPlay();
         let computerSelection = computerPlay();
         let round = playRound(playerSelection, computerSelection);
-        if (round) {
-            result += 1;
+        if (round === "win") {
+            playerWins += 1;
             console.log("You win this round!");
+        } else if (round === "loss") {
+            computerWins += 1;
+            console.log("You lose this round.");
         } else {
-            console.log("No dice");
+            console.log("It's a tie!")
         }
     }
 
-    if (result >= 3) {
-        console.log("You won the game!");
+    if (playerWins > computerWins) {
+        console.log("You win the game!");
+    } else if (computerWins > playerWins) {
+        console.log("You lose the game!");
     } else {
-        console.log("You lose");
+        console.log("It's a tie!");
     }
 }
 
