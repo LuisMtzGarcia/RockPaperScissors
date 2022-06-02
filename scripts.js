@@ -78,6 +78,29 @@ function playRound(playerPlay, computerPlay) {
     }
 }
 
+function playGame() {
+    let result =  0;
+
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = playerPlay();
+        let computerSelection = computerPlay();
+        let round = playRound(playerSelection, computerSelection);
+        if (round) {
+            result += 1;
+            console.log("You win this round!");
+        } else {
+            console.log("No dice");
+        }
+    }
+
+    if (result >= 3) {
+        console.log("You won the game!");
+    } else {
+        console.log("You lose");
+    }
+}
+
+console.log(playGame());
 /*
 const playerSelection = playerPlay();
 const computerSelection = computerPlay();
