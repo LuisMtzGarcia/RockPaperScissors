@@ -40,40 +40,41 @@ function playerPlay() {
 function playRound(playerPlay, computerPlay) {
     let player = playerPlay;
     let computer = computerPlay;
+    let result;
 
     if (player === "rock") {
         if (computer === "paper") {
-            // return "You Lose! Paper beats Rock";
-            return false;
+            result = "loss";
+            return result;
         }
         else if (computer === "scissors") {
-            // return "You Win! Rock beats Scissors";
-            return true;
+            result = "win";
+            return result;
         } else {
-            // return "It's a tie!";
-            return false;
+            result = "tie";
+            return result;
         }
     } else if (player === "paper") {
         if (computer === "rock") {
-            // return "You Win! Paper beats Rock";
-            return true;
+            result = "win";
+            return result;
         } else if (computer === "scissors") {
-            // return "You Lose! Scissors beats Paper";
-            return false;
+            result = "loss";
+            return result;
         } else {
-            // return "It's a tie!";
-            return false;
+            result = "tie";
+            return result;
         }
     } else if (player === "scissors") {
         if (computer === "rock") {
-            // return "You Lose! Rock beats Scissors";
-            return false;
+            result = "loss";
+            return result;
         } else if (computer === "paper") {
-            // return "You Win! Scissors beats Paper";
-            return true;
+            result = "win";
+            return result;
         } else {
-            // return "It's a tie!";
-            return false;
+            result = "tie";
+            return result;
         }
     }
 }
