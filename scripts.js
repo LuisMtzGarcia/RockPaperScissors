@@ -49,6 +49,7 @@ function playRound() {
             result = "win";
             return result;
         } else {
+            console.log("It's a tie!");
             return playRound();
         }
     } else if (player === "paper") {
@@ -59,6 +60,7 @@ function playRound() {
             result = "loss";
             return result;
         } else {
+            console.log("It's a tie!");
             return playRound();
         }
     } else if (player === "scissors") {
@@ -69,6 +71,7 @@ function playRound() {
             result = "win";
             return result;
         } else {
+            console.log("It's a tie!");
             return playRound();
         }
     }
@@ -79,17 +82,13 @@ function playGame() {
     let computerWins = 0;
 
     for (let i = 0; i < 5; i++) {
-        let playerSelection = playerPlay();
-        let computerSelection = computerPlay();
-        let round = playRound(playerSelection, computerSelection);
+        let round = playRound();
         if (round === "win") {
             playerWins += 1;
             console.log("You win this round!");
         } else if (round === "loss") {
             computerWins += 1;
             console.log("You lose this round.");
-        } else {
-            console.log("It's a tie!")
         }
     }
 
@@ -97,8 +96,6 @@ function playGame() {
         console.log("You win the game!");
     } else if (computerWins > playerWins) {
         console.log("You lose the game!");
-    } else {
-        console.log("It's a tie!");
     }
 }
 
