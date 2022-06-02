@@ -109,8 +109,3 @@ function playGame() {
 }
 
 console.log(playGame());
-/*
-const playerSelection = playerPlay();
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
-*/
