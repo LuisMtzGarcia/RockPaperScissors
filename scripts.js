@@ -30,3 +30,47 @@ function playerPlay() {
     play = play.toLowerCase();
     return play;
 }
+
+/**
+ * Receives the plays from the player and the computer.
+ * Plays the round of Rock, Paper, Scissors.
+ * @param {string} playerPlay - The player's play.
+ * @param {string} computerPlay - The computer's play.
+ */
+function playRound(playerPlay, computerPlay) {
+    let player = playerPlay;
+    let computer = computerPlay;
+
+    if (player === "rock") {
+        if (computer === "paper") {
+            return "You Lose! Paper beats Rock";
+        }
+        else if (computer === "scissors") {
+            return "You Win! Rock beats Scissors";
+        } else {
+            return "It's a tie!";
+        }
+    } else if (player === "paper") {
+        if (computer === "rock") {
+            return "You Win! Paper beats Rock";
+        } else if (computer === "scissors") {
+            return "You Lose! Scissors beats Paper";
+        } else {
+            return "It's a tie!";
+        }
+    } else if (player === "scissors") {
+        if (computer === "rock") {
+            return "You Lose! Rock beats Scissors";
+        } else if (computer === "paper") {
+            return "You Win! Scissors beats Paper";
+        } else {
+            return "It's a tie!";
+        }
+    }
+}
+
+/*
+const playerSelection = playerPlay();
+const computerSelection = computerPlay();
+console.log(playRound(playerSelection, computerSelection));
+*/
