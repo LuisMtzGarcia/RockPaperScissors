@@ -49,8 +49,7 @@ function playRound() {
             result = "win";
             return result;
         } else {
-            result = "tie";
-            return result;
+            return playRound();
         }
     } else if (player === "paper") {
         if (computer === "rock") {
@@ -60,8 +59,7 @@ function playRound() {
             result = "loss";
             return result;
         } else {
-            result = "tie";
-            return result;
+            return playRound();
         }
     } else if (player === "scissors") {
         if (computer === "rock") {
@@ -71,8 +69,7 @@ function playRound() {
             result = "win";
             return result;
         } else {
-            result = "tie";
-            return result;
+            return playRound();
         }
     }
 }
