@@ -23,6 +23,7 @@ function computerPlay() {
  * Receives the play from the user,
  * converts it into Lower Case and
  * returns the play.
+ * Checks if the play is valid.
  * @returns 
  */
 function playerPlay() {
