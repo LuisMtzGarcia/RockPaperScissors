@@ -53,8 +53,7 @@ function playRound(selection) {
     let result;
 
     if (player === computer) {
-        console.log("It's a tie!");
-        return playRound();
+        return "It's a tie!"
     }
 
     return checkResult(player, computer);
@@ -136,13 +135,19 @@ function playGame() {
 const buttons = document.querySelectorAll('button');
 const div = document.createElement('div');
 const body = document.querySelector('body');
+let playerCount = 0;
+let computerCount = 0;
 
 buttons.forEach((button) => {
     button.addEventListener('click', function (e) {
         let selection = button.textContent;
-        console.log(playRound(selection))
+        div.textContent = playRound(selection);
+        if (div.textContent === 'win') {
+            playerCount += 1;
+        } else if (div.textContent === 'loss') {
+            computerCount += 1;
+        }
     })
 })
 
-div.textContent = "Yeah";
 body.appendChild(div);
