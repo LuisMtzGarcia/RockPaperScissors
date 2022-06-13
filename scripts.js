@@ -149,10 +149,16 @@ buttons.forEach((button) => {
         } else if (div.textContent === 'loss') {
             computerCount += 1;
         }
-        runningCount.textContent = `${playerCount} - ${computerCount}`
+        runningCount.textContent = `${playerCount} - ${computerCount}`;
+        if (playerCount === 5) {
+            winner.textContent = "You Win!";
+        } else if (computerCount === 5) {
+            winner.textContent = "You Lose!";
+        }
     })
 })
 
 
 body.appendChild(div);
 body.appendChild(runningCount);
+body.appendChild(winner);
