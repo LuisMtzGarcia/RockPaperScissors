@@ -134,7 +134,9 @@ function playGame() {
 
 const buttons = document.querySelectorAll('button');
 const div = document.createElement('div');
+const winner = document.createElement('div');
 const body = document.querySelector('body');
+const runningCount = document.createElement('p');
 let playerCount = 0;
 let computerCount = 0;
 
@@ -147,7 +149,10 @@ buttons.forEach((button) => {
         } else if (div.textContent === 'loss') {
             computerCount += 1;
         }
+        runningCount.textContent = `${playerCount} - ${computerCount}`
     })
 })
 
+
 body.appendChild(div);
+body.appendChild(runningCount);
