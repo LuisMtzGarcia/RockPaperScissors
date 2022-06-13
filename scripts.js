@@ -26,9 +26,11 @@ function computerPlay() {
  * Checks if the play is valid.
  * @returns 
  */
-function playerPlay() {
+function playerPlay(play) {
+    /*
     let play = prompt("Select either Rock, Paper or Scissors: ");
     play = play.toLowerCase();
+    */
 
     if ((play !== "rock") && (play !== "paper") && (play !== "scissors")) {
         alert("Invalid input! Input either Rock, Paper or Scissors.")
@@ -45,8 +47,8 @@ function playerPlay() {
  * calls itself until either a Win or a Loss is obtained.
  * @returns
  */
-function playRound() {
-    let player = playerPlay();
+function playRound(selection) {
+    let player = selection
     let computer = computerPlay();
     let result;
 
@@ -135,6 +137,7 @@ const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
     button.addEventListener('click', function (e) {
-        console.log(button.id)
+        let selection = button.textContent;
+        console.log(playRound(selection))
     })
 })
