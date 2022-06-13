@@ -142,6 +142,13 @@ let computerCount = 0;
 
 buttons.forEach((button) => {
     button.addEventListener('click', function (e) {
+
+        if (winner.textContent) {
+            winner.textContent = '';
+            playerCount = 0;
+            computerCount = 0;
+        }
+
         let selection = button.textContent;
         div.textContent = playRound(selection);
         if (div.textContent === 'win') {
