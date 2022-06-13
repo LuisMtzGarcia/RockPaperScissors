@@ -134,6 +134,8 @@ function playGame() {
 //console.log(playGame());
 
 const buttons = document.querySelectorAll('button');
+const div = document.createElement('div');
+const body = document.querySelector('body');
 
 buttons.forEach((button) => {
     button.addEventListener('click', function (e) {
@@ -141,3 +143,6 @@ buttons.forEach((button) => {
         console.log(playRound(selection))
     })
 })
+
+div.textContent = "Yeah";
+body.appendChild(div);
