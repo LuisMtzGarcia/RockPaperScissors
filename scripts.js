@@ -105,6 +105,7 @@ function checkResult(player, computer) {
  * If the result is a tie, the round is played again without being 
  * counted in the 5 rounds counter.
  */
+/*
 function playGame() {
     let playerWins =  0;
     let computerWins = 0;
@@ -126,5 +127,14 @@ function playGame() {
         console.log("You lose the game!");
     }
 }
+*/
 
-console.log(playGame());
+//console.log(playGame());
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', function (e) {
+        console.log(button.id)
+    })
+})
